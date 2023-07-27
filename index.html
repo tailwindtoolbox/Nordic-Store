@@ -205,7 +205,7 @@
                     <button class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">ORDER NOW</button>
                 </div>
                 <div class="product bg-white p-4 rounded-md shadow-md">
-                    <img src="/images/Solar_ceiling_fan.jpg" alt="Product 2" class="w-full h-48 object-cover mb-4">
+                    <img src="/images/Solar_ceiling_fan1.jpg" alt="Product 2" class="w-full h-48 object-cover mb-4">
                     <h2 class="text-xl font-bold">Solar Celing Fan</h2>
                     <p class="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <p class="text-base font-semibold">Price: $19.99</p>
@@ -218,10 +218,45 @@
 
     </section>
 
-    <section class="bg-white py-8">
-
-    
-
+    <section class="bg-white py-8">  
+        <div class="container mx-auto p-8">
+            <h1 class="text-3xl font-bold mb-6">Order Form</h1>
+            <form id="orderForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name:</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="deliveryAddress">Delivery Address:</label>
+                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="deliveryAddress" rows="3" placeholder="Enter your delivery address" required></textarea>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nearestBusStop">Nearest Bus Stop:</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nearestBusStop" type="text" placeholder="Enter nearest bus stop" required>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="state">State:</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="state" type="text" placeholder="Enter your state" required>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number:</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" type="tel" placeholder="Enter your phone number" required>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber2">Phone Number 2 (optional):</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber2" type="tel" placeholder="Enter an optional phone number">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="quantity">Quantity:</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="quantity" type="number" min="1" placeholder="Enter the quantity" required>
+              </div>
+              <div class="flex items-center justify-center mt-6">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                  Place Order
+                </button>
+              </div>
+            </form>
+          </div>
     </section>
 
 <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
@@ -240,11 +275,13 @@
           <h3 class="text-left font-bold text-gray-900">Social</h3>
 
           <div class="w-full flex items-center py-4 mt-0">
-            <a href="#" class="mx-2">
-              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-              </svg>
+            <!-- Replace '1234567890' with the phone number you want to message -->
+            <a href="https://wa.me/1234567890?text=Hello%20I%20want%20to%20place%20an%20order%20for%20Product%201" class="mx-2">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+                </svg>
             </a>
+  
             <a href="https://facebook.com/breeltd" class="mx-2">
               <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
