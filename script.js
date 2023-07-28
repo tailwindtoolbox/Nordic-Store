@@ -13,14 +13,7 @@ function openOrderForm(productName) {
 // Adding event listeners to the "Order Now" buttons for each product
 document.addEventListener('DOMContentLoaded', function () {
   const orderButtons = document.querySelectorAll('.order-button');
-
-  // Add data-product attribute to buttons without it
-  orderButtons.forEach(function (button) {
-    if (!button.hasAttribute('data-product')) {
-      const productName = button.parentElement.querySelector('h2').textContent;
-      button.setAttribute('data-product', productName);
-    }
-  });
+  
 
   const orderForm = document.getElementById('orderForm');
   orderForm.addEventListener('submit', function (event) {
