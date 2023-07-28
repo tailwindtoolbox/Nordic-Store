@@ -35,7 +35,7 @@
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Shop</a></li>
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">About</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#about">About</a></li>
                     </ul>
                 </nav>
             </div>
@@ -215,9 +215,10 @@
             </div>
 
 
-    <section class="bg-white py-8">  
+    <section id="orderFormSection" class="bg-white py-8 hidden">  
         <div class="container mx-auto p-8">
             <h1 class="text-3xl font-bold mb-6">Order Form</h1>
+            <p class="mb-4">Selected Product: <span id="selectedProduct" class="font-bold"></span></p>
             <form id="orderForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name:</label>
@@ -253,6 +254,11 @@
                 </button>
               </div>
             </form>
+            <div class="flex items-center justify-center mt-6">
+              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onclick="document.getElementById('orderFormSection').style.display = 'none';">
+                Reselect Product
+              </button>
+            </div>
           </div>
     </section>
   </main>
@@ -262,7 +268,7 @@
     <div class="w-full mx-auto flex flex-wrap">
       <div class="flex w-full lg:w-1/2 ">
         <div class="px-3 md:px-0">
-          <h3 class="font-bold text-gray-900">About</h3>
+          <h1 id="about" class="font-bold text-gray-900">About</h1>
           <p class="py-4">
             Blizz Renewable Energy Limited is one of the largest solar companies in Nigeria. We believe solar energy is the future of power distribution in the world and our vision is to create carbon-free cities by accelerating clean and renewable energy solutions in every home. BREE will bring renewable energy to your doorstep.
           </p>
