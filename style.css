@@ -6,6 +6,10 @@
     display: block;
 }
 
+.main {
+    margin-bottom: 40px; /* You can adjust the value as needed */
+  }  
+
 .hover\:grow {
     transition: all 0.3s;
     transform: scale(1);
