@@ -3,7 +3,12 @@
 function openOrderForm(productName) {
   document.getElementById('orderFormSection').style.display = 'block';
   document.getElementById('selectedProduct').textContent = productName;
+  // scroll to the order from section
+  const orderFormSection = document.getElementById('orderFormSection');
+  orderFormSection.scrollIntoView({behavior: 'smooth'});
 }
+
+
 
 // Adding event listeners to the "Order Now" buttons for each product
 document.addEventListener('DOMContentLoaded', function () {
