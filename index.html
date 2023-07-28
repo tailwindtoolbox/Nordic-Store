@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="bg-gray-300 text-gray-600 work-sans leading-normal text-base tracking-normal ">
+<section class="bg-gray-300 text-gray-600 work-sans leading-normal text-base tracking-normal ">
 
     <!--Nav-->
     <nav id="header" class="w-full z-30 top-0 py-1">
@@ -111,9 +111,7 @@
     </div>
 
     <section class="bg-white py-8">
-
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-
             <nav id="store" class="w-full z-30 top-0 px-6 py-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
 
@@ -138,14 +136,16 @@
                     </div>
               </div>
             </nav>
+          </section>
 
-            <div class="product-container bg-gray-400 grid grid-cols-2 gap-2 justify-items-center flex items-center justify-center min-h-screen">
+          <main>
+            <div class="product-container bg-gray-200 grid grid-cols-2 gap-2 justify-items-center flex items-center justify-center min-h-screen">
                 <div class="product bg-white p-4 rounded-md shadow-md">
                     <img src="/images/CCTV.jpg" alt="Product 1" class="w-full h-48 object-cover mb-4">
                     <h2 class="text-xl font-bold">CCTV Camera</h2>
                     <p class="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <p class="text-base font-semibold">Price: $10.99</p>
-                    <button class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">ORDER NOW</button>
+                    <button class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded order-button" data-product="CCTV Camera" >ORDER NOW</button>
                 </div>
                 <div class="product bg-white p-4 rounded-md shadow-md">
                     <img src="/images/Cam_1.jpg" alt="Product 2" class="w-full h-48 object-cover mb-4">
@@ -212,10 +212,8 @@
                 </div>
             </div>
         
-
             </div>
 
-    </section>
 
     <section class="bg-white py-8">  
         <div class="container mx-auto p-8">
@@ -257,6 +255,7 @@
             </form>
           </div>
     </section>
+  </main>
 
 <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
   <div class="container flex px-3 py-8 ">
