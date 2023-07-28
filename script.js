@@ -1,26 +1,42 @@
-const orderButtons = document.querySelectorAll('.order-btn');
-      const orderForm = document.getElementById('orderForm');
-      const productSelect = document.getElementById('productSelect');
+// js/script.js
+// Function to open the order form with the selected product name
+function openOrderForm(productName) {
+  document.getElementById('orderFormSection').style.display = 'block';
+  document.getElementById('selectedProduct').textContent = productName;
+}
 
-      // Function to toggle the order form visibility
-      function toggleOrderForm(productName) {
-        // Show the order form
-        orderForm.classList.remove('hidden');
+// Adding event listeners to the "Order Now" buttons for each product
+document.addEventListener('DOMContentLoaded', function () {
+  const orderButtons = document.querySelectorAll('.order-button');
 
-        // Set the selected product in the dropdown
-        const option = document.createElement('option');
-        option.text = productName;
-        productSelect.innerHTML = '';
-        productSelect.add(option);
+  // Add data-product attribute to buttons without it
+  orderButtons.forEach(function (button) {
+    if (!button.hasAttribute('data-product')) {
+      const productName = button.parentElement.querySelector('h2').textContent;
+      button.setAttribute('data-product', productName);
+    }
+  });
 
-        // You can add more logic here to pre-fill other fields if needed
-      }
+  const orderForm = document.getElementById('orderForm');
+  orderForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Handle the form submission here
+    // You can use the form elements like:
+    // const name = document.getElementById('name').value;
+    // const deliveryAddress = document.getElementById('deliveryAddress').value;
+    // const nearestBusStop = document.getElementById('nearestBusStop').value;
+    // const state = document.getElementById('state').value;
+    // const phoneNumber = document.getElementById('phoneNumber').value;
+    // const phoneNumber2 = document.getElementById('phoneNumber2').value;
+    // const quantity = document.getElementById('quantity').value;
+    // You can then send this data to your backend or process it as needed.
+  });
 
-      // Add click event listeners to all order buttons
-      orderButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const productName = btn.dataset.product;
-          toggleOrderForm(productName);
-        });
-      });
-  
+  orderButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const productName = button.getAttribute('data-product');
+      openOrderForm(productName);
+    });
+  });
+});
+
