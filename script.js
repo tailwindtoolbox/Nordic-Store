@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // const deliveryAddress = document.getElementById('deliveryAddress').value;
     // const nearestBusStop = document.getElementById('nearestBusStop').value;
     // const state = document.getElementById('state').value;
+    // const city = document.getElementById('city').value;
     // const phoneNumber = document.getElementById('phoneNumber').value;
     // const phoneNumber2 = document.getElementById('phoneNumber2').value;
     // const quantity = document.getElementById('quantity').value;
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   orderButtons.forEach(function (button) {
     button.addEventListener('click', function () {
       const productName = button.getAttribute('data-product');
-      const productImageSrc = button.getAttribute('data-image')
+      const productImageSrc = button.getAttribute('data-image');
       openOrderForm(productName, productImageSrc);
     });
   });
