@@ -1,8 +1,9 @@
 // js/script.js
 // Function to open the order form with the selected product name
-function openOrderForm(productName) {
+function openOrderForm(productName, productImageSrc) {
   document.getElementById('orderFormSection').style.display = 'block';
   document.getElementById('selectedProduct').textContent = productName;
+  document.getElementById('selectedProductImage').src = productImageSrc;
   // scroll to the order from section
   const orderFormSection = document.getElementById('orderFormSection');
   orderFormSection.scrollIntoView({behavior: 'smooth'});
