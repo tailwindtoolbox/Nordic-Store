@@ -210,6 +210,16 @@
         
             </div>
 
+                       <!-- Add this modal (popup) HTML structure before the rest of the content -->
+            <div id="confirmOrderModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+              <div class="bg-white p-8 rounded-lg">
+                <h2 class="text-xl font-semibold mb-4">Confirm Order</h2>
+                <p class="mb-4" id="confirmationProductName"></p>
+                <p class="mb-4" id="confirmationProductPrice"></p>
+                <button id="confirmOrderBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Confirm</button>
+              </div>
+            </div>
+
     <section id="orderFormSection" class="bg-white py-8 hidden">  
         <div class="container mx-auto p-8">
             <h1 class="text-3xl font-bold mb-6">Order Form</h1>
@@ -267,17 +277,6 @@
           </div>
     </section>
 
-    <section id="confirmationSection" class="hidden bg-white p-8 rounded shadow-md">
-      <h2 class="text-xl font-bold mb-4">Confirm Order</h2>
-      <div class="mb-4">
-        <p class="text-lg" id="confirmationProductName"></p>
-        <p class="text-base font-semibold" id="confirmationProductPrice"></p>
-      </div>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="confirmOrderBtn">
-        Confirm Order
-      </button>
-    </section>
-    
   </main>
 
 <footer class="container mx-auto bg-white py-8 border-t border-gray-400">

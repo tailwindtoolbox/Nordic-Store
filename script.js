@@ -1,4 +1,3 @@
-// js/script.js
 // Function to open the order form with the selected product name
 function openOrderForm(productName, productImageSrc) {
   document.getElementById('orderFormSection').style.display = 'block';
@@ -6,15 +5,37 @@ function openOrderForm(productName, productImageSrc) {
   document.getElementById('selectedProductImage').src = productImageSrc;
   // scroll to the order from section
   const orderFormSection = document.getElementById('orderFormSection');
-  orderFormSection.scrollIntoView({behavior: 'smooth'});
+  orderFormSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-
-
-// Adding event listeners to the "Order Now" buttons for each product
 document.addEventListener('DOMContentLoaded', function () {
   const orderButtons = document.querySelectorAll('.order-button');
-  
+
+  orderButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const productName = button.getAttribute('data-product');
+      const productPrice = button.getAttribute('data-price');
+      const productImageSrc = button.getAttribute('data-image');
+
+      // Populate the confirmation section with product details
+      document.getElementById('confirmationProductName').textContent = productName;
+      document.getElementById('confirmationProductPrice').textContent = 'Price: ' + productPrice;
+
+      // Show the confirmation modal (popup)
+      document.getElementById('confirmOrderModal').style.display = 'flex';
+      // Hide the order form
+      document.getElementById('orderFormSection').style.display = 'none';
+
+      // Add event listener for the "Confirm Order" button in the confirmation section
+      document.getElementById('confirmOrderBtn').addEventListener('click', function () {
+        // Hide the confirmation modal (popup)
+        document.getElementById('confirmOrderModal').style.display = 'none';
+        // Show the order form
+        document.getElementById('orderFormSection').style.display = 'block';
+        openOrderForm(productName, productImageSrc);
+      });
+    });
+  });
 
   const orderForm = document.getElementById('orderForm');
   orderForm.addEventListener('submit', function (event) {
@@ -31,13 +52,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // const quantity = document.getElementById('quantity').value;
     // You can then send this data to your backend or process it as needed.
   });
-
-  orderButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      const productName = button.getAttribute('data-product');
-      const productImageSrc = button.getAttribute('data-image');
-      openOrderForm(productName, productImageSrc);
-    });
-  });
 });
-
