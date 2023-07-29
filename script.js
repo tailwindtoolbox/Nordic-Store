@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
   orderButtons.forEach(function (button) {
     button.addEventListener('click', function () {
       const productName = button.getAttribute('data-product');
-      openOrderForm(productName);
+      const productImageSrc = button.getAttribute('data-image')
+      openOrderForm(productName, productImageSrc);
     });
   });
 });
