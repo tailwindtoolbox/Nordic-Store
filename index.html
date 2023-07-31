@@ -209,7 +209,15 @@
                     <button class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded order-button" data-product="Solar Ceiling Fan" data-image="images/Solar_ceiling_fan1.jpg" data-price="$10.99">ORDER NOW</button>
                 </div>
             </div>
-        
+
+             <!-- Product Image Popup -->
+             <div id="productImagePopup" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center hidden">
+              <div class="bg-white p-4 rounded-lg max-w-90vw max-h-90vh">
+                <span class="absolute top-5 right-5 text-black text-4xl cursor-pointer" onclick="closeProductImagePopup()">&times;</span>
+                <img id="popupImage" src="" alt="Product Image" class="w-full h-full object-contain">
+              </div>
+            </div>
+            
             </div>
 
                        <!-- Add this modal (popup) HTML structure before the rest of the content -->

@@ -8,9 +8,23 @@ function openOrderForm(productName, productImageSrc) {
   orderFormSection.scrollIntoView({ behavior: 'smooth' });
 }
 
+// Function to open the product image popup
+function openProductImagePopup(imageSrc) {
+  const popup = document.getElementById('productImagePopup');
+  const image = document.getElementById('popupImage');
+  image.src = imageSrc;
+  popup.style.display = 'block';
+}
+
+function closeProductImagePopup() {
+  document.getElementById('productImagePopup').style.display = 'none';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const orderButtons = document.querySelectorAll('.order-button');
+  const orderCovers = document.querySelectorAll('.object-cover');
 
+  // to open the order form when the order button is clicked
   orderButtons.forEach(function (button) {
     button.addEventListener('click', function () {
       const productName = button.getAttribute('data-product');
@@ -37,6 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // to open the product image popup when the order cover is clicked  
+  orderCovers.forEach(function (cover) {
+    cover.addEventListener('click', function () {
+      const imageSrc = cover.getAttribute('src');
+      openProductImagePopup(imageSrc);
+    });
+  });
+
   const orderForm = document.getElementById('orderForm');
   orderForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -52,19 +74,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // const quantity = document.getElementById('quantity').value;
     // You can then send this data to your backend or process it as needed.
   });
-
-  // Function to open the lightbox with the clicked image
-function openLightbox(src) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  lightboxImg.src = src;
-  lightbox.style.display = 'block';
-}
-
-// Function to close the lightbox
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.style.display = 'none';
-}
-
 });
