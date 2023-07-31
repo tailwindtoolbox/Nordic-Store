@@ -52,4 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // const quantity = document.getElementById('quantity').value;
     // You can then send this data to your backend or process it as needed.
   });
+
+  // Function to open the lightbox with the clicked image
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  lightboxImg.src = src;
+  lightbox.style.display = 'block';
+}
+
+// Function to close the lightbox
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none';
+}
+
 });
