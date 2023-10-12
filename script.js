@@ -102,7 +102,7 @@ Quantity: ${quantity}`;
     // Encode the message for the URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    const whatsappNumber = "09037860800";
+    const whatsappNumber = "08120691079";
 
     // Construct the WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}/?text=${encodedMessage}`;
