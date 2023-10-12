@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mx-auto p-4">
+      <h1 class="text-2xl font-bold mb-4">Solar Inverter Predictor</h1>
+
+      <form id="applianceForm" class="mb-4">
+        <div class="mb-2">
+          <label for="tvQuantity">TV Quantity:</label>
+          <select id="tvQuantity" class="ml-2">
+            <!-- Dropdown options for TV quantity -->
+            <!-- Repeat similar structure for other appliances -->
+          </select>
+        </div>
+
+        <!-- Repeat similar structure for other appliances -->
+
+        <button
+          type="button"
+          onclick="calculateLoadAndInverter()"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+        >
+          Calculate
+        </button>
+      </form>
+
+      <div id="result" class="hidden mt-4">
+        <h2 class="font-bold mb-2">Result:</h2>
+        <p id="maxLoad"></p>
+        <p id="suggestedInverter"></p>
+      </div>
+    </div>
+
+    <script src="quote.js"></script>
+  </body>
+</html>
