@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     // Retrieve form field values
+    const productName = document.getElementById("selectedProduct").textContent;
     const name = document.getElementById("name").value;
     const deliveryAddress = document.getElementById("deliveryAddress").value;
     const nearestBusStop = document.getElementById("nearestBusStop").value;
@@ -88,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Construct WhatsApp message
     const whatsappMessage = `Order Details:
+Product Name: ${productName}
 Name: ${name}
 Delivery Address: ${deliveryAddress}
 Nearest Bus Stop: ${nearestBusStop}
@@ -100,13 +102,10 @@ Quantity: ${quantity}`;
     // Encode the message for the URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    const whatsappNumber = "08120691079";
+    const whatsappNumber = "09037860800";
 
     // Construct the WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}/?text=${encodedMessage}`;
-    console.log("The url is", whatsappURL);
-
-    console.log("The order is", whatsappMessage);
 
     // Replace 'whatsappnumber' with your actual WhatsApp number
     window.location.href = whatsappURL;
