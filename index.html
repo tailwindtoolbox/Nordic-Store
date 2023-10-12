@@ -69,7 +69,7 @@
         </div>
     </nav>
 
-    <div class="carousel relative container mx-auto" style="max-width:1600px;">
+    <div class="carousel relative container mx-auto" id="carousel" style="max-width:1600px;">
         <div class="carousel-inner relative overflow-hidden w-full">
             <!--Slide 1-->
             <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-    <section class="bg-white py-8">
+    <section class="bg-white py-8" id="navbar">
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
             <nav id="store" class="w-full z-30 top-0 px-6 py-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
@@ -136,7 +136,7 @@
             </nav>
           </section>
 
-          <main>
+          <section>
             <div class="product-container bg-gray-200 grid grid-cols-2 gap-2 justify-items-center flex items-center justify-center min-h-screen">
 
 
@@ -211,14 +211,15 @@
                     <button class="mt-4 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded order-button" data-product="Solar Ceiling Fan" data-image="images/Solar_ceiling_fan1.jpg" data-price="N35000">ORDER NOW</button>
                 </div>
             </div>
+          </section>
 
              <!-- Product Image Popup -->
-             <div id="productImagePopup" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center hidden">
+             <section id="productImagePopup" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center hidden">
               <div class="bg-white p-4 rounded-lg max-w-90vw max-h-90vh">
                 <span class="absolute top-5 right-5 text-black text-4xl cursor-pointer" onclick="closeProductImagePopup()">&times;</span>
                 <img id="popupImage" src="" alt="Product Image" class="w-full h-full object-contain">
               </div>
-            </div>
+             </section>
             
             </div>
 
@@ -229,71 +230,11 @@
                 <p class="mb-4" id="confirmationProductName"></p>
                 <p class="mb-4" id="confirmationProductPrice"></p>
                 <div class="flex flex-col"  ><button id="confirmOrderBtn" class="bg-green-500 my-2 justify-start hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Buy Now</button>
-                  <button id="installmentalOrderBtn"  onclick="scrollToInstallmentalPlan()" class="bg-gray-500 my-2 justify-start hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Pay Installmentally</button></div>
-                
+                  <button id="installmentalOrderBtn"  onclick="scrollToInstallmentalPlan()" class="bg-gray-500 my-2 justify-start hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Pay Installmentally</button></div>      
               </div>
             </div>
-
-    <section id="orderFormSection" class="bg-white py-8 hidden">  
-        <div class="container mx-auto p-8">
-            <h1 class="text-3xl font-bold mb-6">Order Form</h1>
-            <p class="mb-4">Selected Product: <span id="selectedProduct" class="font-bold"></span></p>
-            <form id="orderForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
-              <div class="selected-product-container mb-6">
-            <img id="selectedProductImage" src="" alt="Selected Product" class="w-20 h-20 rounded-full object-cover">
-            <span id="selectedProductName" class="text-xl font-bold ml-4"><span>
-          </div>
-
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name:</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter your name" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="deliveryAddress">Delivery Address:</label>
-                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="deliveryAddress" rows="3" placeholder="Enter your delivery address" required></textarea>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="nearestBusStop">Nearest Bus Stop:</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nearestBusStop" type="text" placeholder="Enter nearest bus stop" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="state">City:</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" placeholder="Enter your city" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="state">State:</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="state" type="text" placeholder="Enter your state" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number:</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" type="tel" placeholder="Enter your phone number" required>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber2">Phone Number 2 (optional):</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber2" type="tel" placeholder="Enter an optional phone number">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="quantity">Quantity:</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="quantity" type="number" min="1" placeholder="Enter the quantity" value="1" required>
-              </div>
-              <div class="flex items-center justify-center mt-6">
-                <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                  Place Order
-                </button>
-              </div>
-            </form>
-            <div class="flex items-center justify-center mt-6">
-              <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onclick="document.getElementById('orderFormSection').style.display = 'none';">
-                Reselect Product
-              </button>
-            </div>
-          </div>
-    </section>
-
-  </main>
-
-<section class="container mx-auto bg-white py-16 border-gray-400" id="installmentalPaymentSection">
+  
+<section class="container mx-auto bg-white py-8 border-gray-400" id="installmentalPaymentSection">
   <div class="container flex px-3 py-8 ">
     <div class="w-full mx-auto flex flex-wrap">
       <div class="flex w-full lg:w-1/2 ">
@@ -311,7 +252,6 @@
   </div>
   </div>
 </section>
-
 
 <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
   <div class="container flex px-3 py-8 ">
@@ -353,6 +293,63 @@
     </div>
   </div>
 </footer>
+<section id="orderFormSection" class="bg-white py-8 hidden">  
+  <div class="container mx-auto p-8">
+      <h1 class="text-3xl font-bold mb-6">Order Form</h1>
+      <p class="mb-4">Selected Product: <span id="selectedProduct" class="font-bold"></span></p>
+      <form id="orderForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+        <div class="selected-product-container mb-6">
+      <img id="selectedProductImage" src="" alt="Selected Product" class="w-20 h-20 rounded-full object-cover">
+      <span id="selectedProductName" class="text-xl font-bold ml-4"><span>
+    </div>
+
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="deliveryAddress">Delivery Address:</label>
+          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="deliveryAddress" rows="3" placeholder="Enter your delivery address" required></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="nearestBusStop">Nearest Bus Stop:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nearestBusStop" type="text" placeholder="Enter nearest bus stop" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="state">City:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" placeholder="Enter your city" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="state">State:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="state" type="text" placeholder="Enter your state" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" type="tel" placeholder="Enter your phone number" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber2">Phone Number 2 (optional):</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber2" type="tel" placeholder="Enter an optional phone number">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="quantity">Quantity:</label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="quantity" type="number" min="1" placeholder="Enter the quantity" value="1" required>
+        </div>
+        <div class="flex items-center justify-center mt-6">
+          <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Place Order
+          </button>
+        </div>
+      </form>
+      <div class="flex items-center justify-center mt-6">
+        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onclick="document.getElementById('orderFormSection').style.display = 'none';">
+          Reselect Product
+        </button>
+      </div>
+    </div>
+</section>
+
 
 <script src="script.js"></script>
 
