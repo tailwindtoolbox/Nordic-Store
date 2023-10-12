@@ -14,7 +14,6 @@ function scrollToInstallmentalPlan() {
     "installmentalPaymentSection"
   );
   document.getElementById("confirmOrderModal").style.display = "none";
-  console.log("scroll down");
   installmentalPaymentSection.scrollIntoView({ behavior: "smooth" });
 }
 
@@ -76,16 +75,40 @@ document.addEventListener("DOMContentLoaded", function () {
   const orderForm = document.getElementById("orderForm");
   orderForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    // Handle the form submission here
-    // You can use the form elements like:
-    // const name = document.getElementById('name').value;
-    // const deliveryAddress = document.getElementById('deliveryAddress').value;
-    // const nearestBusStop = document.getElementById('nearestBusStop').value;
-    // const state = document.getElementById('state').value;
-    // const city = document.getElementById('city').value;
-    // const phoneNumber = document.getElementById('phoneNumber').value;
-    // const phoneNumber2 = document.getElementById('phoneNumber2').value;
-    // const quantity = document.getElementById('quantity').value;
-    // You can then send this data to your backend or process it as needed.
+
+    // Retrieve form field values
+    const name = document.getElementById("name").value;
+    const deliveryAddress = document.getElementById("deliveryAddress").value;
+    const nearestBusStop = document.getElementById("nearestBusStop").value;
+    const state = document.getElementById("state").value;
+    const city = document.getElementById("city").value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const phoneNumber2 = document.getElementById("phoneNumber2").value;
+    const quantity = document.getElementById("quantity").value;
+
+    // Construct WhatsApp message
+    const whatsappMessage = `Order Details:
+Name: ${name}
+Delivery Address: ${deliveryAddress}
+Nearest Bus Stop: ${nearestBusStop}
+City: ${city}
+State: ${state}
+Phone Number: ${phoneNumber}
+Phone Number 2: ${phoneNumber2}
+Quantity: ${quantity}`;
+
+    // Encode the message for the URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    const whatsappNumber = "08120691079";
+
+    // Construct the WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}/?text=${encodedMessage}`;
+    console.log("The url is", whatsappURL);
+
+    console.log("The order is", whatsappMessage);
+
+    // Replace 'whatsappnumber' with your actual WhatsApp number
+    window.location.href = whatsappURL;
   });
 });
